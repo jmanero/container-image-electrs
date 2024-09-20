@@ -12,7 +12,7 @@ WORKDIR /source
 RUN cargo build --release --bin electrs
 
 ## Build a skelton for the scratch output image
-RUN mkdir -p /build/etc /build/usr/bin /build/usr/lib /build/usr/lib64
+RUN mkdir -p /build/etc /build/usr/bin /build/usr/lib /build/usr/lib64 /build/root
 RUN ln -s /usr/bin /build/bin
 RUN ln -s /usr/lib /build/lib
 RUN ln -s /usr/lib64 /build/lib64
