@@ -11,5 +11,6 @@ arguments+=(--monitoring-addr "${ELECTRS_MONITORING_ADDR}")
 arguments+=(--network "${ELECTRS_NETWORK}")
 arguments+=(--daemon-rpc-addr "${BITCOIND_RPC_ADDR}")
 arguments+=(--cookie "${BITCOIND_RPC_USER}:${BITCOIND_RPC_PASS}")
+arguments+=(--daemon-dir "${BITCOIND_DIR}")
 
 exec /usr/bin/electrs "${arguments[@]}"

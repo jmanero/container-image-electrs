@@ -12,7 +12,7 @@ WORKDIR /source
 RUN cargo build --release --bin electrs
 
 ## Build a skelton for the scratch output image
-RUN mkdir -p /build/etc /build/usr/bin /build/usr/lib /build/usr/lib64 /build/root
+RUN mkdir -p /build/etc /build/usr/bin /build/usr/lib /build/usr/lib64
 RUN ln -s /usr/bin /build/bin
 RUN ln -s /usr/lib /build/lib
 RUN ln -s /usr/lib64 /build/lib64
@@ -63,5 +63,6 @@ ENV ELECTRS_NETWORK="mainnet"
 ENV BITCOIND_RPC_ADDR="127.0.0.1:8332"
 ENV BITCOIND_RPC_USER="bitcoin"
 ENV BITCOIND_RPC_PASS="bitcoin"
+ENV BITCOIND_DIR="/tmp"
 
 CMD [ "/usr/bin/entrypoint" ]
